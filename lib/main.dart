@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbar_manager/flutter_statusbar_manager.dart';
-
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 void main() {
   runApp(MyApp());
 }
 
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context ) {
-    FlutterStatusbarManager.setHidden(true, animation:StatusBarAnimation.SLIDE);
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    FlutterStatusbarManager.setHidden(true,
+        animation: StatusBarAnimation.SLIDE);
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal[600],
+        backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -31,69 +36,177 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'Pacifico'),
               ),
               Text(
-                "SENIOR DEVELOPER",
+                "THE DISASTER.",
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.teal[100],
+                  color: Color(0xff474747),
                   fontFamily: 'Source Sans Pro',
                   letterSpacing: 2.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(width: 150.0, height: 20.0, child: Divider(color: Colors.teal[100]),),
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 70.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.phone,
-                      color: Colors.teal[700],
-                    ),
-                    title:Text(
-                        "  +91 88888 88888",
-                        style: TextStyle(
-                          color: Colors.teal[900],
-                          fontFamily: 'Source Sans Pro',
-                          fontSize: 17,
-                        ),
-                      ) ,
-                  ),
+              SizedBox(
+                width: 150.0,
+                height: 20.0,
+                child: Divider(
+                  color: Colors.teal[100],
                 ),
-              
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 70.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.email,
-                      color: Colors.teal[700],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(70.0, 10, 70.0, 0),
+                child: Container(
+                  child: RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(10.0),
                     ),
-                    title: Text(
-                      "someone@email.com",
-                      style: TextStyle(
-                        color: Colors.teal[900],
-                        fontFamily: 'Source Sans Pro',
-                        fontSize: 17,
+                    color: Colors.teal[50],
+                    elevation: 20,
+                    highlightColor: Colors.teal,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 16.5, 16.5, 16.5),
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0.0, 0, 30.0, 0),
+                            child: Icon(
+                              Icons.call,
+                              color: Colors.teal[700],
+                            ),
+                          ),
+                          Text(
+                            "+91 88888 88888",
+                            style: TextStyle(
+                              fontSize: 19.0,
+                              fontFamily: 'Source Sans Pro',
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1.0,
+                              color: Colors.teal[900],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+                    onPressed: () {
+                      UrlLauncher.launch('tel:8888888888');
+                    },
                   ),
                 ),
-                Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 70.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.code,
-                      color: Colors.teal[700],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(70.0, 16, 70.0, 0),
+                child: Container(
+                  child: RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(10.0),
                     ),
-                    title:Text(
-                        "  Techno_Disaster",
-                        style: TextStyle(
-                          color: Colors.teal[900],
-                          fontFamily: 'Source Sans Pro',
-                          fontSize: 18,
-                        ),
-                      ) ,
+                    color: Colors.teal[50],
+                    elevation: 20,
+                    highlightColor: Colors.teal,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 16.5, 16.5, 16.5),
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0.0, 0, 20.0, 0),
+                            child: Icon(
+                              Icons.email,
+                              color: Colors.teal[700],
+                            ),
+                          ),
+                          Text(
+                            "nitinnirve@gmail.com",
+                            style: TextStyle(
+                              fontSize: 19.0,
+                              fontFamily: 'Source Sans Pro',
+                              color: Colors.teal[900],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    onPressed: () {
+                      UrlLauncher.launch('mailto:nitinnirve@gmail.com');
+                    },
                   ),
                 ),
-              
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(70.0, 16, 70.0, 0),
+                child: Container(
+                  child: RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    color: Colors.teal[50],
+                    elevation: 20,
+                    highlightColor: Colors.teal,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 16.5, 16.5, 16.5),
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0.0, 0, 72.0, 0),
+                            child: Icon(
+                              Icons.code,
+                              color: Colors.teal[700],
+                            ),
+                          ),
+                          Text(
+                            "Github",
+                            style: TextStyle(
+                                fontSize: 19.0,
+                                fontFamily: 'Source Sans Pro',
+                                letterSpacing: 1.0,
+                                color: Colors.teal[900]),
+                          ),
+                        ],
+                      ),
+                    ),
+                    onPressed: () {
+                      UrlLauncher.launch('https://github.com/Techno-Disaster');
+                    },
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(70.0, 16, 70.0, 0),
+                child: Container(
+                  child: RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    color: Colors.teal[50],
+                    elevation: 20,
+                    highlightColor: Colors.teal,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 16.5, 16.5, 16.5),
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0.0, 0, 40.0, 0),
+                            child: Icon(
+                              Icons.contacts,
+                              color: Colors.teal[700],
+                            ),
+                          ),
+                          Text(
+                            "Other Contacts",
+                            style: TextStyle(
+                              fontSize: 19.0,
+                              fontFamily: 'Source Sans Pro',
+                              letterSpacing: 1.0,
+                              color: Colors.teal[900],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    onPressed: () {
+                      UrlLauncher.launch('https://techno-disaster.github.io/');
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -101,4 +214,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
