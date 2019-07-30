@@ -202,7 +202,7 @@ class _MyAppState extends State<MyApp> {
                       ),
                     ),
                     onPressed: () {
-                      UrlLauncher.launch('https://techno-disaster.github.io/');
+                      UrlLauncher.launch('http://technodisaster.me/');
                     },
                   ),
                 ),
