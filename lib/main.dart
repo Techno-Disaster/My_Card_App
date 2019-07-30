@@ -19,8 +19,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.teal,
-        body: SafeArea(
-          child: Column(
+        body: 
+           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
@@ -209,7 +209,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ],
           ),
-        ),
+      
       ),
     );
   }
